@@ -58,22 +58,22 @@ $hotels = [
         'distance_to_center' => 1
     ],
     [
-        'name' => 'Hotel Palma',
-        'description' => 'Hotel Palma Descrizione',
+        'name' => 'Hotel Palma Bella',
+        'description' => 'Hotel Palma Bella Descrizione',
         'parking' => false,
         'vote' => 5,
         'distance_to_center' => 15
     ],
     [
         'name' => 'Hotel Bellodavedere',
-        'description' => 'Hotel Palma Descrizione',
+        'description' => 'Hotel Bellodavedere Descrizione',
         'parking' => false,
         'vote' => 5,
         'distance_to_center' => 1150
     ],
     [
         'name' => 'Hotel Fattoincasa',
-        'description' => 'Hotel Palma Descrizione',
+        'description' => 'Hotel Fattoincasa Descrizione',
         'parking' => true,
         'vote' => 5,
         'distance_to_center' => 87
