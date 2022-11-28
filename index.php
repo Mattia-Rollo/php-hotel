@@ -41,10 +41,13 @@ $hotels = [
 
 // $dati = $_GET['parcheggio'];
 // var_dump($dati);
-var_dump($_GET['parcheggio']);
+// var_dump($_GET['parcheggio']);
 if (isset($_GET['parcheggio']) && !empty($_GET['parcheggio'])) {
     $hotels = array_filter($hotels, fn($item) => $item['parking'] == filter_var($_GET['parcheggio'], FILTER_VALIDATE_BOOLEAN));
-    var_dump($hotels);
+    // var_dump($hotels);
+}
+if (isset($_GET['voto']) && !empty($_GET['voto'])) {
+    $hotels = array_filter($hotels, fn($item) => $item['vote'] == $_GET['voto']);
 }
 ?>
 <!DOCTYPE html>
@@ -79,7 +82,7 @@ if (isset($_GET['parcheggio']) && !empty($_GET['parcheggio'])) {
                     No
                 </label>
             </div>
-            <select>
+            <select name="voto" id="voto">
                 <option selected>Rating</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -95,11 +98,11 @@ if (isset($_GET['parcheggio']) && !empty($_GET['parcheggio'])) {
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">hotel</th>
-                <th scope="col">description</th>
-                <th scope="col">parking</th>
-                <th scope="col">vote</th>
-                <th scope="col">distance km</th>
+                <th scope="col">Hotel</th>
+                <th scope="col">Description</th>
+                <th scope="col">Parking</th>
+                <th scope="col">Vote</th>
+                <th scope="col">Distance km</th>
             </tr>
         </thead>
         <tbody>
@@ -107,7 +110,7 @@ if (isset($_GET['parcheggio']) && !empty($_GET['parcheggio'])) {
 
             <tr>
                 <?php
-                var_dump($hotel['parking']);
+                // var_dump($hotel['parking']);
                 $park = $hotel['parking'] ? 'si' : 'no';
                 echo "<td>" . $hotel['name'] . "</td>";
                 echo "<td>" . $hotel['description'] . " </td>";
