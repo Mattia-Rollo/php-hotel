@@ -42,7 +42,7 @@ $hotels = [
 // $dati = $_GET['parcheggio'];
 // var_dump($dati);
 // var_dump($_GET['parcheggio']);
-$radiobuttonvalue = $_GET['parcheggio'];
+// $radiobuttonvalue = $_GET['parcheggio'];
 if (isset($_GET['parcheggio']) && !empty($_GET['parcheggio'])) {
     $hotels = array_filter($hotels, fn($item) => $item['parking'] == filter_var($_GET['parcheggio'], FILTER_VALIDATE_BOOLEAN));
     // var_dump($hotels);
