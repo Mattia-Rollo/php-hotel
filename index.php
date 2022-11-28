@@ -120,21 +120,23 @@ if (isset($_GET['voto']) && !empty($_GET['voto'])) {
                 <div class="d-flex gap-2 h100">
                     <label for="parcheggio">Parcheggio:</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="parcheggio" id="parcheggio" value="true">
+                        <input class="form-check-input" type="radio" name="parcheggio" id="parcheggio" value="true"
+                            <?php echo ($_GET['parcheggio']=="true") ? "checked='checked'" : ""; ?>>
                         <label class="form-check-label" for="Si">
                             Si
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="parcheggio" value="false" id="parcheggio">
+                        <input class="form-check-input" type="radio" name="parcheggio" value="false" id="parcheggio"
+                            <?php echo ($_GET["parcheggio"]=="false") ? "checked='checked'" : ""; ?>>
                         <label class="form-check-label" for="No">
                             No
                         </label>
                     </div>
                 </div>
-                <script type="text/javascript">
+                <!-- <script type="text/javascript">
                     document.getElementById('parcheggio').value = "<?php echo $_GET['parcheggio']; ?>";
-                </script>
+                </script> -->
                 <div class="d-flex h-100">
                     <select name="voto" id="voto" class="h-100">
                         <option value="">Rating</option>
