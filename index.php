@@ -132,6 +132,9 @@ if (isset($_GET['voto']) && !empty($_GET['voto'])) {
                         </label>
                     </div>
                 </div>
+                <script type="text/javascript">
+                    document.getElementById('parcheggio').value = "<?php echo $_GET['parcheggio']; ?>";
+                </script>
                 <div class="d-flex h-100">
                     <select name="voto" id="voto" class="h-100">
                         <option value="">Rating</option>
@@ -142,6 +145,9 @@ if (isset($_GET['voto']) && !empty($_GET['voto'])) {
                         <option value="5">5</option>
                     </select>
                 </div>
+                <script type="text/javascript">
+                    document.getElementById('voto').value = "<?php echo $_GET['voto']; ?>";
+                </script>
                 <div class="d-flex gap-2">
                     <button class="rounded" type="submit">invia</button>
                     <button class="rounded" type="reset">reset</button>
