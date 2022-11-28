@@ -69,74 +69,76 @@ if (isset($_GET['voto']) && !empty($_GET['voto'])) {
 </head>
 
 <body>
-    <div class="container bg-light rounded">
+    <div class="container bg-light rounded py-5">
         <h1 class="py-4 text-center">Hotel a Milano</h1>
-        <div class="w-25">
-            <form action="index.php" method="get">
-                <div class="row">
-                    <div class="col">
-                        <label for="parcheggio">Parcheggio</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="parcheggio" id="parcheggio" value="true">
-                            <label class="form-check-label" for="Si">
-                                Si
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="parcheggio" value="false"
-                                id="parcheggio">
-                            <label class="form-check-label" for="No">
-                                No
-                            </label>
-                        </div>
+
+        <form action="index.php" method="get">
+            <div class="row">
+                <div class="col-2 d-flex gap-2 h100">
+                    <label for="parcheggio">Parcheggio:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="parcheggio" id="parcheggio" value="true">
+                        <label class="form-check-label" for="Si">
+                            Si
+                        </label>
                     </div>
-                    <div class="col">
-                        <select name="voto" id="voto">
-                            <option selected value="">Rating</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                            <option value="4">Four</option>
-                            <option value="5">Five</option>
-                        </select>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="parcheggio" value="false" id="parcheggio">
+                        <label class="form-check-label" for="No">
+                            No
+                        </label>
                     </div>
                 </div>
-                <button type="submit">invia</button>
-                <button type="reset">reset</button>
-            </form>
-        </div>
+                <div class="col-1">
+                    <select name="voto" id="voto" class="h-100">
+                        <option disabled value="">Rating</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <button type="submit">invia</button>
+                    <button type="reset">reset</button>
+                </div>
+            </div>
+        </form>
+
         <table class="table table-striped">
+
+            <thead>
+                <tr>
+                    <th scope="col">Hotel</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Parking</th>
+                    <th scope="col">Vote</th>
+                    <th scope="col">Distance km</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($hotels as $hotel) { ?>
+
+                <tr>
+                    <?php
+                    // var_dump($hotel['parking']);
+                    $park = $hotel['parking'] ? 'si' : 'no';
+                    echo "<td>" . $hotel['name'] . "</td>";
+                    echo "<td>" . $hotel['description'] . " </td>";
+                    echo "<td>" . $park . "</td>";
+                    echo "<td>" . $hotel['vote'] . "</td>";
+                    echo "<td>" . $hotel['distance_to_center'] . "</td> ";
+
+
+                    ?>
+                </tr>
+
+                <?php } ?>
+
+            </tbody>
+        </table>
     </div>
-    <thead>
-        <tr>
-            <th scope="col">Hotel</th>
-            <th scope="col">Description</th>
-            <th scope="col">Parking</th>
-            <th scope="col">Vote</th>
-            <th scope="col">Distance km</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($hotels as $hotel) { ?>
-
-        <tr>
-            <?php
-            // var_dump($hotel['parking']);
-            $park = $hotel['parking'] ? 'si' : 'no';
-            echo "<td>" . $hotel['name'] . "</td>";
-            echo "<td>" . $hotel['description'] . " </td>";
-            echo "<td>" . $park . "</td>";
-            echo "<td>" . $hotel['vote'] . "</td>";
-            echo "<td>" . $hotel['distance_to_center'] . "</td> ";
-
-
-            ?>
-        </tr>
-
-        <?php } ?>
-
-    </tbody>
-    </table>
 </body>
 
 </html>

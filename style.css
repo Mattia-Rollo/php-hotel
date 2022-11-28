@@ -2,12 +2,12 @@ body {
     background-image: url('https://www.northlakecomo.net/images/content/375/Milano-1588065935-xl.jpg');
     background-size: cover;
 }
-.container {
+/* .container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-}
+} */
 input[type='select'] {
     border: 5px solid black;
 }
