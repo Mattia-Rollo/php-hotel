@@ -36,6 +36,34 @@ $hotels = [
         'vote' => 2,
         'distance_to_center' => 50
     ],
+    [
+        'name' => 'Hotel Roma',
+        'description' => 'Hotel Roma Descrizione',
+        'parking' => true,
+        'vote' => 2,
+        'distance_to_center' => 50
+    ],
+    [
+        'name' => 'Hotel Bingo',
+        'description' => 'Hotel Bingo Descrizione',
+        'parking' => false,
+        'vote' => 1,
+        'distance_to_center' => 38
+    ],
+    [
+        'name' => 'Hotel Stella',
+        'description' => 'Hotel Stella Descrizione',
+        'parking' => false,
+        'vote' => 3,
+        'distance_to_center' => 1
+    ],
+    [
+        'name' => 'Hotel Palma',
+        'description' => 'Hotel Palma Descrizione',
+        'parking' => true,
+        'vote' => 5,
+        'distance_to_center' => 15
+    ],
 
 ];
 
@@ -69,12 +97,12 @@ if (isset($_GET['voto']) && !empty($_GET['voto'])) {
 </head>
 
 <body>
-    <div class="container bg-light rounded py-5">
+    <div class="container bg-light rounded shadow-lg py-5">
         <h1 class="py-4 text-center">Hotel a Milano</h1>
 
         <form action="index.php" method="get">
-            <div class="row p-3 align-items-center">
-                <div class="col-2 d-flex gap-2 h100">
+            <div class="d-flex gap-2 align-items-center py-3">
+                <div class="d-flex gap-2 h100">
                     <label for="parcheggio">Parcheggio:</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="parcheggio" id="parcheggio" value="true">
@@ -89,17 +117,17 @@ if (isset($_GET['voto']) && !empty($_GET['voto'])) {
                         </label>
                     </div>
                 </div>
-                <div class="col-1">
+                <div class="d-flex h-100">
                     <select name="voto" id="voto" class="h-100">
-                        <option disabled value="">Rating</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
-                        <option value="5">Five</option>
+                        <option value="">Rating</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </select>
                 </div>
-                <div class="col-2 h-100">
+                <div class="d-flex gap-2">
                     <button class="rounded" type="submit">invia</button>
                     <button class="rounded" type="reset">reset</button>
                 </div>

@@ -11,3 +11,9 @@ body {
 input[type='select'] {
     border: 5px solid black;
 }
+table{
+    background-color: rgb(255, 255, 255);
+}
+thead{
+    background-color: lightsteelblue;
+}
