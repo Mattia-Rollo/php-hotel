@@ -54,14 +54,14 @@
 </head>
 <body>
     
-   <table class="table">
+   <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">hotel</th>
       <th scope="col">description</th>
       <th scope="col">parking</th>
       <th scope="col">vote</th>
-      <th scope="col">distance</th>
+      <th scope="col">distance km</th>
     </tr>
   </thead>
   <tbody>
