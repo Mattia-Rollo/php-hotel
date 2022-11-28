@@ -48,7 +48,7 @@ if (isset($_GET['parcheggio']) && !empty($_GET['parcheggio'])) {
     // var_dump($hotels);
 }
 if (isset($_GET['voto']) && !empty($_GET['voto'])) {
-    $hotels = array_filter($hotels, fn($item) => $item['vote'] == $_GET['voto']);
+    $hotels = array_filter($hotels, fn($item) => $item['vote'] >= $_GET['voto']);
 }
 ?>
 <!DOCTYPE html>
@@ -70,26 +70,21 @@ if (isset($_GET['voto']) && !empty($_GET['voto'])) {
 
 <body>
     <div class="container bg-light rounded">
-        <h1 class="py-5 text-center">Hotel a Milano</h1>
+        <h1 class="py-4 text-center">Hotel a Milano</h1>
         <div class="w-25">
             <form action="index.php" method="get">
                 <div class="row">
                     <div class="col">
                         <label for="parcheggio">Parcheggio</label>
                         <div class="form-check">
-                            <input class="form-check-input" <?php if ($radiobuttonvalue == "true") {
-                                echo
-                                    'checked="checked"';
-                            } ?> type="radio" name="parcheggio" id="parcheggio" value="true">
+                            <input class="form-check-input" type="radio" name="parcheggio" id="parcheggio" value="true">
                             <label class="form-check-label" for="Si">
                                 Si
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="parcheggio" value="false" <?php if
-                            ($radiobuttonvalue == "false") {
-                                echo 'checked="checked"';
-                            } ?> id="parcheggio">
+                            <input class="form-check-input" type="radio" name="parcheggio" value="false"
+                                id="parcheggio">
                             <label class="form-check-label" for="No">
                                 No
                             </label>

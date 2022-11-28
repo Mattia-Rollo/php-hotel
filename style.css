@@ -8,3 +8,6 @@ body {
     left: 50%;
     transform: translate(-50%,-50%);
 }
+input[type='select'] {
+    border: 5px solid black;
+}
