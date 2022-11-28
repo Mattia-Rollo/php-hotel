@@ -121,16 +121,16 @@ if (isset($_GET['voto']) && !empty($_GET['voto'])) {
                     <label for="parcheggio">Parcheggio:</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="parcheggio" id="parcheggio" value="true"
-                            <?php echo (isset($_GET['parcheggio']) && $_GET['parcheggio']=="true") ? "checked='checked'"
-                            : ""; ?>>
+                            <?php echo (isset($_GET['parcheggio']) && $_GET['parcheggio'] == "true") ? "checked='checked'"
+                                : ""; ?>>
                         <label class="form-check-label" for="Si">
                             Si
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="parcheggio" value="false" id="parcheggio"
-                            <?php echo (isset($_GET['parcheggio']) && $_GET["parcheggio"]=="false") ? 
-                                "checked='checked'" : ""; ?>>
+                            <?php echo (isset($_GET['parcheggio']) && $_GET["parcheggio"] == "false") ?
+                            "checked='checked'" : ""; ?>>
                         <label class="form-check-label" for="No">
                             No
                         </label>
@@ -154,7 +154,7 @@ if (isset($_GET['voto']) && !empty($_GET['voto'])) {
                 </script>
                 <div class="d-flex gap-2">
                     <button class="rounded" type="submit">invia</button>
-                    <button class="rounded" type="reset">reset</button>
+                    <input class="rounded" type="reset" onclick=" window.location = 'index.php'">reset</input>
                 </div>
             </div>
         </form>
