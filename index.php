@@ -73,7 +73,7 @@ if (isset($_GET['voto']) && !empty($_GET['voto'])) {
         <h1 class="py-4 text-center">Hotel a Milano</h1>
 
         <form action="index.php" method="get">
-            <div class="row">
+            <div class="row p-3 align-items-center">
                 <div class="col-2 d-flex gap-2 h100">
                     <label for="parcheggio">Parcheggio:</label>
                     <div class="form-check">
@@ -99,9 +99,9 @@ if (isset($_GET['voto']) && !empty($_GET['voto'])) {
                         <option value="5">Five</option>
                     </select>
                 </div>
-                <div class="col-2">
-                    <button type="submit">invia</button>
-                    <button type="reset">reset</button>
+                <div class="col-2 h-100">
+                    <button class="rounded" type="submit">invia</button>
+                    <button class="rounded" type="reset">reset</button>
                 </div>
             </div>
         </form>
