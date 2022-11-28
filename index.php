@@ -60,9 +60,23 @@ $hotels = [
     [
         'name' => 'Hotel Palma',
         'description' => 'Hotel Palma Descrizione',
-        'parking' => true,
+        'parking' => false,
         'vote' => 5,
         'distance_to_center' => 15
+    ],
+    [
+        'name' => 'Hotel Bellodavedere',
+        'description' => 'Hotel Palma Descrizione',
+        'parking' => false,
+        'vote' => 5,
+        'distance_to_center' => 1150
+    ],
+    [
+        'name' => 'Hotel Fattoincasa',
+        'description' => 'Hotel Palma Descrizione',
+        'parking' => true,
+        'vote' => 5,
+        'distance_to_center' => 87
     ],
 
 ];
@@ -77,6 +91,7 @@ if (isset($_GET['parcheggio']) && !empty($_GET['parcheggio'])) {
 }
 if (isset($_GET['voto']) && !empty($_GET['voto'])) {
     $hotels = array_filter($hotels, fn($item) => $item['vote'] >= $_GET['voto']);
+    asort($hotels);
 }
 ?>
 <!DOCTYPE html>
@@ -146,7 +161,9 @@ if (isset($_GET['voto']) && !empty($_GET['voto'])) {
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($hotels as $hotel) { ?>
+                <?php
+                // asort($hotels);
+                foreach ($hotels as $hotel) { ?>
 
                 <tr>
                     <?php

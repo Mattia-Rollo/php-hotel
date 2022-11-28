@@ -8,6 +8,10 @@ body {
     left: 50%;
     transform: translate(-50%,-50%);
 } */
+h1{
+    background-image: url('https://img.ilgcdn.com/sites/default/files/styles/xl/public/foto/2022/05/02/1651509563-milano-duomo-1.jpg?_=1651509563');
+    /* background-color: cover; */
+}
 input[type='select'] {
     border: 5px solid black;
 }
