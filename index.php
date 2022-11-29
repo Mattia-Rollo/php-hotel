@@ -153,8 +153,8 @@ if (isset($_GET['voto']) && !empty($_GET['voto'])) {
                     document.getElementById('voto').value = "<?php echo $_GET['voto']; ?>";
                 </script>
                 <div class="d-flex gap-2">
-                    <input class="rounded" type="submit" name="inviami" placeholder="ok">
-                    <input class="rounded" type="reset" onclick=" window.location = 'index.php'"></input>
+                    <input class="rounded" type="submit" value="inviami">
+                    <input class="rounded" type="reset" value="reset" onclick=" window.location = 'index.php'"></input>
                 </div>
             </div>
         </form>
@@ -162,7 +162,7 @@ if (isset($_GET['voto']) && !empty($_GET['voto'])) {
         <table class="table table-striped">
 
             <thead>
-                <tr>
+                <tr class="text-center">
                     <th scope="col">Hotel</th>
                     <th scope="col">Description</th>
                     <th scope="col">Parking</th>
